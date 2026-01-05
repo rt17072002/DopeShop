@@ -13,6 +13,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
+  "https://dope-shop.vercel.app/",
 ];
 
 app.use(

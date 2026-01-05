@@ -7,14 +7,14 @@ import { AppContext } from '../context/AppContext';
 const ProductPage = ({product}) => {
 
     const {id} = useParams();
-    const {addToCart} = useContext(AppContext);
+    const {addToCart, backendUrl} = useContext(AppContext);
     // const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
     const navigate = useNavigate();
     const [newProduct, setNewProduct] = useState(null);
 
     const getProduct = async ()=>{
-        const res = await axios.get("http://localhost:5000/api/products/"+id);
+        const res = await axios.get(backendUrl+"/api/products/"+id);
         setNewProduct(res.data);
     }
 

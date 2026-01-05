@@ -7,6 +7,8 @@ const AppContextProvider = ({ children }) => {
 
     const [products, setProducts] = useState([])
     const [searchTerm, setSearchTerm] = useState("");
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 
     const [cartProducts, setCartProducts] = useState([])
     const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem("cartData")) || []); // State as { productId: quantity }
@@ -78,22 +80,20 @@ const AppContextProvider = ({ children }) => {
     };
 
     const fetchProducts = async () => {
-        const res = await axios.get("http://localhost:5000/api/products/");
-        console.log(res.data);
+        const res = await axios.get(backendUrl+"/api/products/");
         setProducts(res.data)
     }
 
     useEffect(() => {
         fetchProducts();
-        console.log(cart);
     }, [])
 
     useEffect(() => {
-    if (products.length && cart.length) {
-        console.log(getCartProducts(products, cart));
-setCartProducts(getCartProducts(products, cart));
-    }
-}, [products, cart]);
+        if (products.length && cart.length) {
+            console.log(getCartProducts(products, cart));
+            setCartProducts(getCartProducts(products, cart));
+        }
+    }, [products, cart]);
 
 
     const value = {

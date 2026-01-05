@@ -14,7 +14,7 @@ const PRODUCTS = [
 const Cart = () => {
 
     // Initializing with some dummy quantities for demonstration
-    const { cartProducts, addToCart } = useContext(AppContext);
+    const { cartProducts, addToCart , backendUrl} = useContext(AppContext);
     const [cart, setCart] = useState({ 1: 1, 2: 2 });
     const navigate = useNavigate();
 

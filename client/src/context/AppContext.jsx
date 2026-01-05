@@ -90,7 +90,7 @@ const AppContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (products.length && cart.length) {
-            console.log(getCartProducts(products, cart));
+            // console.log(getCartProducts(products, cart));
             setCartProducts(getCartProducts(products, cart));
         }
     }, [products, cart]);

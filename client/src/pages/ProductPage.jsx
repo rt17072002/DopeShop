@@ -14,7 +14,7 @@ const ProductPage = ({product}) => {
     const [newProduct, setNewProduct] = useState(null);
 
     const getProduct = async ()=>{
-        const res = await axios.get(backendUrl+"/api/products/"+id);
+        const res = await axios.get("https://dope-shop-server.vercel.app/api/products/"+id);
         setNewProduct(res.data);
     }
 
@@ -24,7 +24,7 @@ const ProductPage = ({product}) => {
 
 
     // Fallback for demo if no product is passed
-    const item = newProduct || product || {
+    const item = newProduct || {
         _id: 1,
         name: "Premium Wireless Headphones",
         price: 299,

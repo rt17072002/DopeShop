@@ -24,7 +24,8 @@ const ProductPage = ({product}) => {
 
 
     // Fallback for demo if no product is passed
-    const item = newProduct || {
+    const item = newProduct || 
+    {
         _id: 1,
         name: "Premium Wireless Headphones",
         price: 299,

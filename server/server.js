@@ -34,6 +34,8 @@ app.use(cors())
 
 app.use(express.json());
 
+app.use("/",(req,res)=>res.send("Api working"))
+
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 

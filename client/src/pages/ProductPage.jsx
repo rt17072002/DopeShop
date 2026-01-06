@@ -14,7 +14,7 @@ const ProductPage = ({product}) => {
     const [newProduct, setNewProduct] = useState(null);
 
     const getProduct = async ()=>{
-        const res = await axios.get("https://dope-shop-server.vercel.app/api/products/"+id);
+        const res = await axios.get(import.meta.env.VITE_BACKEND_URL+"/api/products/"+id);
         setNewProduct(res.data);
     }
 

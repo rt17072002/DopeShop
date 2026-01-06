@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
 // Using the same dummy data for reference
-const PRODUCTS = [
-    { id: 1, name: "Premium Wireless Headphones", price: 299, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500", category: "Electronics" },
-    { id: 2, name: "Minimalist Leather Watch", price: 150, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500", category: "Accessories" },
-    { id: 3, name: "Smart Fitness Tracker", price: 89, image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500", category: "Electronics" },
-];
+// const PRODUCTS = [
+//     { id: 1, name: "Premium Wireless Headphones", price: 299, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500", category: "Electronics" },
+//     { id: 2, name: "Minimalist Leather Watch", price: 150, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500", category: "Accessories" },
+//     { id: 3, name: "Smart Fitness Tracker", price: 89, image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500", category: "Electronics" },
+// ];
 
 
 const Cart = () => {

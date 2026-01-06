@@ -96,7 +96,7 @@ const Products = () => {
       } else {
         res = await axios.post(backendUrl+"/api/products", data);
       }
-      console.log(res.data);
+      // console.log(res.data);
       setIsModalOpen(false);
       fetchProducts();
     } catch (err) {

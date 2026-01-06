@@ -20,7 +20,7 @@ const CheckoutPage = ({ cartTotal = 648, itemsCount = 3, onBack }) => {
 
   const verifyPayment = async (paymentResponse, orderId) => {
     try {
-      const res = await axios.post(backendUrl+"/api/orders/verify", {
+      const res = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/orders/verify", {
         ...paymentResponse,
         orderId
       });
@@ -77,7 +77,7 @@ const CheckoutPage = ({ cartTotal = 648, itemsCount = 3, onBack }) => {
       return;
     }
     console.log(formData);
-    const res = await axios.post(backendUrl+"/api/orders/cod", { customer: formData, items: cart });
+    const res = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/orders/cod", { customer: formData, items: cart });
     console.log(res);
     if (res.data.success) {
       localStorage.removeItem("cartData");
@@ -96,7 +96,7 @@ const CheckoutPage = ({ cartTotal = 648, itemsCount = 3, onBack }) => {
     }
 
     try {
-      const res = await axios.post(backendUrl+"/api/orders/place", { customer: formData, items: cart });
+      const res = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/orders/place", { customer: formData, items: cart });
 
       const { razorpayOrder, order } = res.data;
 

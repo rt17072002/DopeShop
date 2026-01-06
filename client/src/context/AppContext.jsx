@@ -80,7 +80,7 @@ const AppContextProvider = ({ children }) => {
     };
 
     const fetchProducts = async () => {
-        const res = await axios.get(backendUrl+"/api/products/");
+        const res = await axios.get(import.meta.env.VITE_BACKEND_URL+"/api/products/");
         setProducts(res.data)
     }
 
@@ -90,7 +90,7 @@ const AppContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (products.length && cart.length) {
-            // console.log(getCartProducts(products, cart));
+            console.log(getCartProducts(products, cart));
             setCartProducts(getCartProducts(products, cart));
         }
     }, [products, cart]);

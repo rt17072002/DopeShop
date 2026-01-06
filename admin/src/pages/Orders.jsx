@@ -20,7 +20,7 @@ const Orders = () => {
   const navigate = useNavigate();
 
   const { orders, fetchOrders, backendUrl } = useContext(AppContext);
-  console.log(orders);
+  // console.log(orders);
 
   const deleteOrder = async (id) => {
     // setOrders(orders.filter(order => order._id !== id));
